@@ -22,6 +22,10 @@
                         <router-link :to="{ name: 'opiniones', params: { juegoId: juego.id, juegoName: juego.name } }" class="btn btn-primary">
                             Opinión
                         </router-link>
+
+                        <router-link :to="{ name: 'administracion', params: { juegoId: juego.id, juegoName: juego.name  } }">
+                            <button class="btn btn-lg" style="color:red"><i class="fas fa-heart"></i></button>
+                        </router-link>
                     </div>
                 </div>
             </div>

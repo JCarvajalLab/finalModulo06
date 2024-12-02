@@ -10,7 +10,7 @@ import NotFound from '../views/NotFound.vue'
 const routes = [
     { path: '/', name: 'home', component: HomeView },
     { path: '/opiniones/:juegoId/:juegoName', name: 'opiniones', component: OpinionesView },
-    { path: '/administracion', name: 'administracion', component: AdministracionView },
+    { path: '/administracion/:juegoId/:juegoName', name: 'administracion', component: AdministracionView , props: true},
     { path: '/:catchAll(.*)', name: 'notFound', component: NotFound },
     //{ path: '/opinion/:juegoId', name: 'opinionform', component: OpinionForm, props: true }
 ]
