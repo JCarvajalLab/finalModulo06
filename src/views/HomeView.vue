@@ -9,8 +9,8 @@
         <p>{{ error }}</p>
     </div>
     <div v-else class="row">
-        <div class="col-md-4" v-for="juego in juegos" :key="juego.id">
-            <div class="card" style="width: 22rem;">
+        <div class="col-xl-4" v-for="juego in juegos" :key="juego.id">
+            <div class="card" style="width: 20rem;">
                 <img :src="juego.imagen" :alt="juego.name" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ juego.name }}</h5>
@@ -18,7 +18,10 @@
                     <p class="card-text">Lanzamiento: {{ juego.released }}</p>
                     <p class="card-text">Actualización: {{ juego.updated }}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-primary">Opinion</button>
+                        <!-- Modificar el enlace para incluir el nombre del juego -->
+                        <router-link :to="{ name: 'opiniones', params: { juegoId: juego.id, juegoName: juego.name } }" class="btn btn-primary">
+                            Opinión
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -43,9 +46,10 @@ export default {
     },
     methods: {
         obtenerJuegos() {
-            axios.get(`https://api.rawg.io/api/games?key=c99c1c019f3246afa2cccbc2209eda01&dates=2019-09-01,2019-09-30&platforms=18,1,7`)
+            axios.get(`https://api.rawg.io/api/games?key=5a3024ccfa434ac5bc4126f3b76a2d3b&dates=2019-09-01,2019-09-30&platforms=18,1,7`)
                 .then(response => {
                     this.juegos = response.data.results.map(juego => ({
+                        id: juego.id, // Asegúrate de incluir el ID del juego
                         imagen: juego.background_image,
                         name: juego.name,
                         rating: juego.metacritic,
@@ -63,7 +67,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
     max-width: 1200px;
     margin: 0 auto;

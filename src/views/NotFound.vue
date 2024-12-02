@@ -1,15 +1,13 @@
 <template>
-<div>
-    <h1>Notfound</h1>
-</div>
+    <div class="container">
+        <div class="center">
+            <img src="https://webhostingmedia.net/wp-content/uploads/2018/01/http-error-404-not-found.png" alt="">
+        </div>
+    </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style>
-
+.centrar{
+    margin-top: 50px;
+}
 </style>
