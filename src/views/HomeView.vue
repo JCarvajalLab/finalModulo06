@@ -1,7 +1,14 @@
 <template>
 <div class="container">
     <h1>Juegos</h1>
- <div class="row">
+    <div v-if="loading" class="text-center">
+        <img src="https://i.imgur.com/JfPpwOA.gif" alt="Cargando...">
+    </div>
+    <div v-else-if="error" class="text-center">
+        <h2>Error al cargar los datos</h2>
+        <p>{{ error }}</p>
+    </div>
+    <div v-else class="row">
         <div class="col-md-4" v-for="juego in juegos" :key="juego.id">
             <div class="card" style="width: 22rem;">
                 <img :src="juego.imagen" :alt="juego.name" class="card-img-top">
@@ -11,12 +18,12 @@
                     <p class="card-text">Lanzamiento: {{ juego.released }}</p>
                     <p class="card-text">Actualización: {{ juego.updated }}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-primary">Ir a algún lugar</button>
+                        <button class="btn btn-primary">Opinion</button>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 </div>
 </template>
 
@@ -26,7 +33,9 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            juegos: []
+            juegos: [],
+            loading: true,
+            error: null
         }
     },
     mounted() {
@@ -43,8 +52,12 @@ export default {
                         released: juego.released,
                         updated: juego.updated
                     }));
+                    this.loading = false;
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                    this.error = error.message;
+                    this.loading = false;
+                });
         }
     }
 }
