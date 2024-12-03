@@ -26,7 +26,7 @@
 </div>
 </template>
 
-<script>
+<script scoped>
 import OpinionForm from '@/components/OpinionForm.vue'
 export default {
     name: 'OpinionesView',

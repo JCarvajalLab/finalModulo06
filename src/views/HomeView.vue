@@ -34,7 +34,7 @@
 </div>
 </template>
 
-<script>
+<script scoped>
 import axios from 'axios';
 
 export default {

@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .centrar{
     margin-top: 50px;
 }
