@@ -16,15 +16,29 @@
         <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
     </form>
 
-    <h2 class="mt-4">A continuación podrás ver tu opinión</h2>
-    <div v-if="opiniones.length === 0" class="alert alert-danger">
-        No existen opiniones
-    </div>
-    <div v-for="(opinion, index) in opiniones" :key="index" class="border p-3 mb-2">
-        <p><strong>Opinión creada por:</strong> {{ opinion.nombre }}</p>
-        <p><strong>Opinión:</strong> {{ opinion.texto }}</p>
-        <button @click="editOpinion(index)" class="btn btn-warning">Editar</button>
-        <button @click="deleteOpinion(index)" class="btn btn-danger">Eliminar</button>
+    <div>
+        <h2 class="mt-4">A continuación podrás ver tu opinión</h2>
+        <div v-if="opiniones.length === 0" class="alert alert-danger">
+            No existen opiniones
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div v-for="(opinion, index) in opiniones" :key="index" class="accordion-item">
+                <h2 class="accordion-header" :id="'heading' + index">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index">
+                        Opinión creada por: {{ opinion.nombre }}
+                    </button>
+                </h2>
+                <div :id="'collapse' + index" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Opinión:</strong> {{ opinion.texto }}
+                        <div class="mt-2">
+                            <button @click="editOpinion(index)" class="btn btn-warning me-2">Editar</button>
+                            <button @click="deleteOpinion(index)" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="footer-container">
