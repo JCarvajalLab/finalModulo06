@@ -16,8 +16,8 @@
         </div>
 
         <div class="content">
-            <h1>Resumen de tu cuenta</h1>
-            <p>
+            <h1 style="margin-left:10px">Resumen de tu cuenta</h1>
+            <p style="margin-left:10px">
                 Le diste me gusta al juego <strong> {{ juegoName  }}</strong>
             </p>
             <div class="card small-card">
@@ -76,7 +76,7 @@
 
 <script>
 import NavbarView from '../components/NavbarView.vue';
-import FooterView from '@/components/FooterView.vue';
+import FooterView from '../components/FooterView.vue';
 
 export default {
     name: 'AdministracionView',
@@ -142,39 +142,33 @@ body {
     height: 100vh;
 }
 
+.info{
+    text-align: center;
+    margin-top: 20%;
+}
+
 .navbar-container {
-    margin-left: 250px;
+    /*margin-left: 250px;*/
     /* Ajusta este valor según el ancho de tu sidebar */
+    margin: 0;
 }
 
 .footer-container {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    /* background-color: #333; */
     color: white;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .sidebar {
-    position: fixed;
-    /* Fija la sidebar en la ventana */
-    top: 0;
-    /* Desde la parte superior */
-    left: 0;
-    /* Desde el lado izquierdo */
-    width: 250px;
-    /* Ancho de la sidebar */
-    height: 100%;
-    /* Altura completa */
-    background-color: #333;
-    /* Color de fondo */
-    color: white;
-    /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Verde con 50% de opacidad */
+    color: white; /* Color del texto */
     padding: 20px;
-    /* Espaciado interno */
-    box-sizing: border-box;
-    /* Incluye padding en el ancho total */
+    width: 250px;
+    height: 100%;
+    position: fixed;
 }
 
 .sidebar img {

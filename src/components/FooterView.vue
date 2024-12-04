@@ -1,8 +1,8 @@
 <template>
 <footer class="footer">
     <div class="footer-content">
-        <h1>Footer</h1>
-        <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
+        <h1>PRÁCTICA DE CONSOLIDACIÓN</h1>
+        <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
     </div>
 </footer>
 </template>
@@ -15,8 +15,8 @@ export default {
 
 <style scoped>
 .footer {
-    background-color: #333;
-    /* Color de fondo similar al navbar */
+    /* background-color: #333;  Color de fondo similar al navbar */
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     /* Color del texto */
     padding: 20px;

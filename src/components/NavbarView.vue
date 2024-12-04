@@ -1,9 +1,9 @@
 <template>
 <div class="general">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg "> <!-- navbar-dark bg-dark -->
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fas fa-headset"></i> Games opinion</a>
+            <a class="navbar-brand " href="#"><i class="fas fa-headset"></i> Games opinion</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,8 +30,15 @@ export default {
 <style scoped>
 /* Estilos específicos para el componente navBar */
 nav {
-    background-color: #333;
-    color: white;
-    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.8); /* Negro con 50% de opacidad */
+    color: white; /* Color del texto */
+    padding: 10px
+}
+
+a{
+    color: white
+}
+a:hover{
+    color: rgb(216, 204, 204)
 }
 </style>

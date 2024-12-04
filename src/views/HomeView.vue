@@ -3,7 +3,7 @@
     <NavbarView />
 </div>
 <div class="container">
-    <h1>Juegos</h1>
+    <h1 style="margin-top:20px; magin-bot:20px">Lista de juegos disponibles</h1>
     <div v-if="loading" class="text-center">
         <img src="https://i.imgur.com/JfPpwOA.gif" alt="Cargando...">
     </div>
@@ -92,6 +92,8 @@ export default {
 
 .card {
     margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
 }
 
 .card-img-top {
@@ -103,14 +105,14 @@ export default {
 .navbar-container {
     width: 100%;
     /* Abarcar todo el ancho */
-    background-color: #333;
+    /*background-color: #333;*/
     /* Color de fondo del navbar */
 }
 
 .footer-container {
     width: 100%;
-    /* Abarcar todo el ancho */
-    background-color: #333;
+    /* Abarcar todo el ancho 
+    background-color: #333;*/
     /* Color de fondo del footer */
 }
 </style>
