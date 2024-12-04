@@ -148,11 +148,13 @@ body {
 }
 
 .footer-container {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    /* Abarcar todo el ancho */
     background-color: #333;
-    /* Color de fondo del footer */
-    margin-top: auto;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 .sidebar {
     position: fixed;
@@ -179,23 +181,6 @@ body {
     border-radius: 50%;
     /* Hace que la imagen sea circular */
 }
-
-/* display: flex;
-  flex-direction: column;
-  align-items: center;
-   Asegura que la sidebar ocupe toda la altura */
-
-/* 
-.sidebar img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-.sidebar h2 {
-  margin-top: 10px;
-  font-size: 18px;
-  text-align: center;
-} */
 
 .content {
     margin-top: 5%;
@@ -234,30 +219,6 @@ body {
     /* Establece un ancho máximo si es necesario */
 }
 
-/*
-.card button {
-    background-color: #ffc107;
-    border: none;
-    padding: 10px 20px;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-*/
-/*
-.progress-bar {
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-.progress-bar div {
-  height: 20px;
-  background-color: #ddd;
-  width: 50%;
-}
-*/
 .stats {
     display: flex;
     justify-content: space-between;
