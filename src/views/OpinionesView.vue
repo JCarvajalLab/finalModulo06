@@ -1,4 +1,7 @@
 <template>
+<div class="navbar-container">
+    <NavbarView />
+</div>
 <div class="container">
     <OpinionForm :juegoName="$route.params.juegoName"></OpinionForm>
     <form @submit.prevent="submitOpinion">
@@ -24,14 +27,23 @@
         <button @click="deleteOpinion(index)" class="btn btn-danger">Eliminar</button>
     </div>
 </div>
+<div class="footer-container">
+    <FooterView />
+</div>
 </template>
 
 <script scoped>
-import OpinionForm from '@/components/OpinionForm.vue'
+import OpinionForm from '@/components/OpinionForm.vue';
+
+import NavbarView from '../components/NavbarView.vue';
+import FooterView from '@/components/FooterView.vue';
+
 export default {
     name: 'OpinionesView',
     components: {
-        OpinionForm
+        OpinionForm,
+        NavbarView,
+        FooterView
     },
     data() {
         return {

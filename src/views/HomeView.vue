@@ -1,4 +1,7 @@
 <template>
+<div class="navbar-container">
+    <NavbarView />
+</div>
 <div class="container">
     <h1>Juegos</h1>
     <div v-if="loading" class="text-center">
@@ -32,12 +35,22 @@
         </div>
     </div>
 </div>
+<div class="footer-container">
+    <FooterView />
+</div>
 </template>
 
 <script scoped>
 import axios from 'axios';
+import NavbarView from '../components/NavbarView.vue';
+import FooterView from '@/components/FooterView.vue';
 
 export default {
+    name: 'HomeView',
+    components: {
+        NavbarView,
+        FooterView
+    },
     data() {
         return {
             juegos: [],
@@ -85,5 +98,19 @@ export default {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+.navbar-container {
+    width: 100%;
+    /* Abarcar todo el ancho */
+    background-color: #333;
+    /* Color de fondo del navbar */
+}
+
+.footer-container {
+    width: 100%;
+    /* Abarcar todo el ancho */
+    background-color: #333;
+    /* Color de fondo del footer */
 }
 </style>

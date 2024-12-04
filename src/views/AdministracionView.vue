@@ -7,6 +7,9 @@
         </button>
     </div>
     <div v-if="this.nombre && this.apellido != null">
+        <div class="navbar-container">
+            <NavbarView />
+        </div>
         <div class="sidebar">
             <img alt="User  profile picture" height="50" src="https://storage.googleapis.com/a1aa/image/xSCFQEgwZcJ8JFVy5oSmAPhwQX9kWTbkQFM3Iv04jvKuQw9E.jpg" width="50" />
             <h2> {{ getDatos }} </h2>
@@ -64,13 +67,23 @@
                 </div>
             </div>
         </div>
+        <div class="footer-container">
+            <FooterView />
+        </div>
     </div>
 </div>
 </template>
 
 <script>
+import NavbarView from '../components/NavbarView.vue';
+import FooterView from '@/components/FooterView.vue';
+
 export default {
     name: 'AdministracionView',
+    components: {
+        NavbarView,
+        FooterView
+    },
 
     data() {
         return {
@@ -101,10 +114,10 @@ export default {
         },
     },
     computed: {
-    juegoName() {
-        // Supongamos que el nombre del juego se pasa como otro parámetro
-        return this.$route.params.juegoName; // Cambia esto según tu estructura
-    },
+        juegoName() {
+            // Supongamos que el nombre del juego se pasa como otro parámetro
+            return this.$route.params.juegoName; // Cambia esto según tu estructura
+        },
 
         getDatos() {
             return "Bienvenid@ " + this.nombre + " " + this.apellido;
@@ -129,6 +142,18 @@ body {
     height: 100vh;
 }
 
+.navbar-container {
+    margin-left: 250px;
+    /* Ajusta este valor según el ancho de tu sidebar */
+}
+
+.footer-container {
+    width: 100%;
+    /* Abarcar todo el ancho */
+    background-color: #333;
+    /* Color de fondo del footer */
+    margin-top: auto;
+}
 .sidebar {
     position: fixed;
     /* Fija la sidebar en la ventana */
